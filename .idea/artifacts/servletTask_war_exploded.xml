@@ -1,0 +1,34 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="servletTask:war exploded">
+    <output-path>$PROJECT_DIR$/target/ыукмдуеефыл</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>servletTask</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="servletTask" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.0" />
+          <element id="library" level="project" name="Maven: jakarta.el:jakarta.el-api:5.0.0" />
+          <element id="library" level="project" name="Maven: org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1" />
+          <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-core:2.20.0" />
+          <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-api:2.20.0" />
+          <element id="library" level="project" name="Maven: org.postgresql:postgresql:42.6.0" />
+          <element id="library" level="project" name="Maven: org.checkerframework:checker-qual:3.31.0" />
+          <element id="library" level="project" name="Maven: com.zaxxer:HikariCP:5.0.1" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:2.0.0-alpha1" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/ыукмдуеефыл/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="servletTask/web/Web" />
+    </root>
+  </artifact>
+</component>

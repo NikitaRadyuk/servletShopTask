@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="servletTask:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>servletTask</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="ыукмдуеефыл.war">
+      <element id="artifact" artifact-name="servletTask:war exploded" />
+    </root>
+  </artifact>
+</component>
