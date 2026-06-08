@@ -20,7 +20,6 @@ public class AuthFilter implements Filter {
     private static final Set<String> STATIC_RESOURCES = Set.of(
             "/css/", "/js/", "/images/"
     );
-
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
