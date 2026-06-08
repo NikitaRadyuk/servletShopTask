@@ -30,13 +30,11 @@ public class AuthFilter implements Filter {
 
         String path = req.getRequestURI().substring(req.getContextPath().length());
 
-        // Разрешаем публичные пути и статические ресурсы
         if (isPublicPath(path) || isStaticResource(path)) {
             chain.doFilter(request, response);
             return;
         }
 
-        // Проверяем авторизацию
         boolean isLoggedIn = (session != null && session.getAttribute("user") != null);
 
         if (!isLoggedIn) {
