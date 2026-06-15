@@ -320,19 +320,14 @@ public class ProductController extends HttpServlet {
             return;
         }
 
-        try {
-            Long productId = Long.parseLong(idParam);
-            HttpSession session = request.getSession();
-            Map<Long, CartItem> cart = (Map<Long, CartItem>) session.getAttribute("cart");
-
-            if (cart != null) {
-                cart.remove(productId);
-                setFlashMessage(request, "success", "Item removed from cart");
-            }
-
-        } catch (NumberFormatException e) {
-            // ignore
+        Long productId = Long.parseLong(idParam);
+        HttpSession session = request.getSession();
+        Map<Long, CartItem> cart = (Map<Long, CartItem>) session.getAttribute("cart");
+        if (cart != null) {
+            cart.remove(productId);
+            setFlashMessage(request, "success", "Item removed from cart");
         }
+
 
         response.sendRedirect(request.getContextPath() + "/products/cart/view");
     }

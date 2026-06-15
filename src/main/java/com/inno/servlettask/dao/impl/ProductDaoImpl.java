@@ -14,7 +14,6 @@ import java.util.Optional;
 public class ProductDaoImpl implements ProductDao {
     private static final Logger logger = LogManager.getLogger();
 
-    // SQL queries
     private static final String FIND_BY_ID =
             "SELECT id, name, description, price FROM products WHERE id = ?";
 

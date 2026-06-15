@@ -3,9 +3,6 @@ package com.inno.servlettask.validator;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Класс для хранения результатов валидации
- */
 public class ValidationResult {
     private final List<String> errors = new ArrayList<>();
     private boolean valid = true;

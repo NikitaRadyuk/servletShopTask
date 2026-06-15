@@ -30,30 +30,26 @@ class UserServiceImplTest {
 
     @Test
     void authenticate_ShouldReturnUser_WhenCredentialsValid() {
-        // Arrange
         String username = "testuser";
         String password = "password123";
         User user = new User();
         user.setUsername(username);
-        // Password hash для "password123"
+
         user.setPasswordHash("somesalt:somehash");
 
         when(userDao.findByUsername(username)).thenReturn(Optional.of(user));
 
-        // Act & Assert (примечание: для реального теста нужно корректно хешировать пароль)
         assertNotNull(userService.authenticate(username, password));
     }
 
     @Test
     void register_ShouldThrowException_WhenUsernameExists() {
-        // Arrange
         String username = "existing";
         when(userDao.findByUsername(username)).thenReturn(Optional.of(new User()));
 
         User user = new User();
         user.setUsername(username);
 
-        // Act & Assert
         assertThrows(IllegalArgumentException.class,
                 () -> userService.register(user, "password"));
     }

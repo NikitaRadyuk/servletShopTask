@@ -92,7 +92,6 @@ public class ProductServiceImpl implements ProductService {
             throw new IllegalArgumentException("Product not found with id: " + product.getId());
         }
 
-        // Валидация
         if (product.getName() == null || product.getName().trim().isEmpty()) {
             throw new IllegalArgumentException("Product name cannot be empty");
         }

@@ -43,7 +43,6 @@ public class AuthFilter implements Filter {
             return;
         }
 
-        // Проверяем роль для админских путей
         if (path.startsWith("/admin") && !"ADMIN".equals(session.getAttribute("role"))) {
             logger.warn("Access denied for non-admin user to: {}", path);
             resp.sendError(HttpServletResponse.SC_FORBIDDEN);

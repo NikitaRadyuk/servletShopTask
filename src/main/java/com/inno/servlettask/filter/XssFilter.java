@@ -48,7 +48,6 @@ public class XssFilter implements Filter {
             if (input == null) {
                 return null;
             }
-            // Экранирование HTML специальных символов
             return input
                     .replace("&", "&amp;")
                     .replace("<", "&lt;")

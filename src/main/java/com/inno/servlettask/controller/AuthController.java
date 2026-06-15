@@ -142,7 +142,6 @@ public class AuthController extends HttpServlet {
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
 
-        // Валидация
         if (!password.equals(confirmPassword)) {
             setFlashMessage(request, "error", "Passwords do not match");
             response.sendRedirect(request.getContextPath() + "/auth/register");

@@ -15,7 +15,6 @@ import java.util.Optional;
 public class OrderDaoImpl implements OrderDao {
     private static final Logger logger = LogManager.getLogger(OrderDaoImpl.class);
 
-    // SQL queries for orders
     private static final String FIND_ORDER_BY_ID =
             "SELECT id, user_id, total_amount FROM orders WHERE id = ?";
 
@@ -117,7 +116,6 @@ public class OrderDaoImpl implements OrderDao {
             conn.setAutoCommit(false);
 
             try {
-                // Insert order
                 try (PreparedStatement stmt = conn.prepareStatement(INSERT_ORDER, Statement.RETURN_GENERATED_KEYS)) {
                     stmt.setLong(1, order.getUserId());
                     stmt.setInt(2, order.getTotalAmount());
@@ -131,7 +129,6 @@ public class OrderDaoImpl implements OrderDao {
                     }
                 }
 
-                // Insert order items
                 for (OrderItem item : order.getItems()) {
                     item.setOrderId(order.getId());
                     addOrderItem(item);
@@ -253,7 +250,6 @@ public class OrderDaoImpl implements OrderDao {
                     stmt.executeUpdate();
                 }
 
-                // Delete order
                 try (PreparedStatement stmt = conn.prepareStatement(DELETE_ORDER)) {
                     stmt.setLong(1, id);
                     int affected = stmt.executeUpdate();
